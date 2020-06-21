@@ -1,0 +1,56 @@
+﻿<div class="top-nav">
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <i class="fa fa-bars"></i>
+    </button>
+</div>
+
+
+<div class="@NavMenuCssClass">
+
+    <button class="navbar-toggler-in" @onclick="ToggleNavMenu">
+        X
+    </button>
+
+    <nav class="navbar">
+        <ul class="nav-content">
+
+
+            <li>
+                <NavLink class="nav-link" href="/" @onclick="ToggleNavMenu">
+                    <span class="oi oi-home"></span> Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="Projects" @onclick="ToggleNavMenu">
+                    <span class="oi oi-task"></span> Projects and Programs
+                </NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="About Me" @onclick="ToggleNavMenu">
+                    <span class="oi oi-badge"></span> About
+                </NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="Contact" @onclick="ToggleNavMenu">
+                    <span class="oi oi-envelope-open"></span> Contact
+                </NavLink>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+
+
+
+@code {
+    bool collapseNavMenu = true;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+
+

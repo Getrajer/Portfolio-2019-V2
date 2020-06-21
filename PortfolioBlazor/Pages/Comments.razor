@@ -1,0 +1,152 @@
+﻿@page "/Comments"
+@inherits CommentsBase
+
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/AlgorithmsP2.css" rel="stylesheet" />
+    <link href="../css/coments_syle.css" rel="stylesheet" />
+</head>
+
+
+<div class="description_container">
+    <div class="content_container">
+        <div class="title_container">
+            <h2>Comment System</h2>
+            <div class="heading_underline blinker"></div>
+        </div>
+        <p>This componet works as a custom comment system for a website.</p>
+    </div>
+</div>
+
+
+<div class="program_container">
+    <div class="add_comment_container">
+        <div class="error">
+            @error_message
+        </div>
+
+        <div class="input-box">
+            <label>Name: </label>
+            <br />
+            <input @bind="name" />
+        </div>
+        <div class="input-box">
+            <label>Your comment: </label>
+            <br />
+            <textarea @bind="message"></textarea>
+        </div>
+        <div class="input-box">
+            <label>Choose Avatar</label>
+            <br />
+            @foreach (var o in imagePaths)
+            {
+                <label class="avatar_choice" @onclick="@(e => ChangeAvatar(o.Id))">
+                    <input type="radio" name="test" value="small" checked>
+                    <img src="@o.ImgPath">
+                </label>
+            }
+        </div>
+    </div>
+
+
+    <div class="input-box">
+        <button class="btn" @onclick="CreateComment">Create Comment</button>
+    </div>
+
+    @if (comments.Count != 0)
+    {
+        <div class="line"></div>
+    }
+
+    <div class="comments-container">
+        @foreach (var c in comments)
+        {
+            <div class="comment_container @c.DisplayComment">
+                <div class="user_container">
+                    <div class="user_box1">
+                        <img src="@c.ImgPath" />
+                    </div>
+                    <div class="user_box2">
+                        <p><label>User name:</label> @c.Name </p>
+                        @if (c.BeenEdited == true)
+                        {
+                            <p><label>Edited:</label> @c.Posted</p>
+                        }
+                        else
+                        {
+                            <p><label>Posted:</label> @c.Posted</p>
+                        }
+                    </div>
+
+                    <div class="user_box3 comment_box">
+                        @c.Message
+                    </div>
+                </div>
+
+
+                
+                
+                <div class="rate_box">
+                    <p>Likes: @c.Like</p>
+                    <button class="btn rate_btn" @onclick="@(e => LikeComment(c.Id))"><i class="fa fa-thumbs-up"></i></button>
+                </div>
+                <div class="rate_box">
+                    <p>Dislikes: @c.Dislike</p>
+                    <button class="btn rate_btn" @onclick="@(e => DislikeComment(c.Id))"><i class="fa fa-thumbs-down"></i></button>
+                </div>
+
+                @if(Client_IP == c.CreatorsIP)
+                {
+                    <div class="comment_btn_box">
+                        <button class="btn" @onclick="@(e => DeleteComment(c.Id))">Delete Comment</button>
+                    </div>
+                }
+                
+            </div>
+
+            if(Client_IP == c.CreatorsIP)
+            {
+                            @if (comments[c.Id].DisplayEdit == "display_none")
+            {
+                <div class="comment_btn_box">
+                    <button class="btn" @onclick="@(e => ToggleEditWindow(c.Id))">Edit Comment</button>
+                </div>
+            }
+            else
+            {
+                <div class="comment_btn_box">
+                    <button class="btn" @onclick="@(e => ToggleEditWindow(c.Id))">Cancel</button>
+                </div>
+            }
+            }
+
+            <div class="@c.DisplayEdit">
+                <div class="edit_comment_container">
+                    <div>
+                        @error_message
+                    </div>
+                    <div class="input-box">
+                        <label>Name: </label><br />
+                        <input placeholder="@c.Name" @bind="edit_name" />
+                    </div>
+                    <div class="input-box">
+                        <label>Your comment: </label><br />
+                        <textarea placeholder="@c.Message" @bind="edit_message"></textarea>
+                    </div>
+                    <div class="input-box">
+                        @foreach (var o in imagePaths)
+                        {
+                            <label @onclick="@(e => ChangeAvatarEdit(o.Id))">
+                                <input type="radio" name="test" value="small" checked>
+                                <img src="@o.ImgPath">
+                            </label>
+                        }
+                    </div>
+                <div class="comment_btn_box">
+                    <button class="btn" @onclick="@(e => EditComment(c.Id))">Edit</button>
+                </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

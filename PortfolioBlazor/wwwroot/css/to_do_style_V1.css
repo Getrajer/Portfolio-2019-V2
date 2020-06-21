@@ -1,0 +1,319 @@
+﻿html{
+    background-image: url(../backgrounds/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+body{
+    background-color:transparent;
+}
+
+
+
+.main {
+    background-color:transparent;
+}
+
+.content_container {
+    background-color: rgba(221, 0, 255, 0.51);
+    border:none;
+}
+
+.content_container:hover{
+    border:none;
+}
+
+/*To-Do List*/
+.to_do_container_all {
+    background-color: rgba(0, 0, 0, 0.47);
+    margin-bottom: 15em;
+}
+
+.to_do_container {
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.row{
+    margin:0;
+    padding:0;
+}
+
+.col-md-4, .col-md-8{
+    margin:0; 
+    padding:0;
+}
+
+ul{
+    padding: 0;
+    margin:0;
+}
+
+ul li{
+    list-style:none;
+    padding: 0;
+    margin:0;
+}
+
+.dates_to_do_container {
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.78);
+    padding: 3.5em 1em 1em 1em;
+    height: 100%;
+}
+
+.date_posted, .deadline {
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    padding-right: 4em;
+    padding: 0.5em;
+}
+
+.date_posted p, .deadline p{
+    margin-bottom:0.5em;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    border:none;
+}
+
+
+.to_do_title {
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.78);
+    height: 50px;
+}
+
+.to_do_title h4 {
+    padding:0.5em;
+}
+
+.button_container button {
+    background-color: rgba(221, 0, 255, 0.51);
+    border: none;
+    height: 50px;
+    width: 50px;
+    transition: 0.3s;
+}
+
+.button_container button:hover {
+    background-color: rgba(221, 0, 255, 1);
+}
+
+.to_do_main {
+    background-color: rgba(0, 0, 0, 0.30);
+    padding: 2em;
+    font-weight:400;
+    font-size: 1.3rem;
+    min-height:200px;
+    height:100%;
+}
+.button_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+/*------------------------------------------------------*/
+
+/*To-Do input*/
+.to_do_input_container {
+    padding: 2em 5em;
+    background-color: rgba(0, 0, 0, 0.69);
+    
+}
+
+.to_do_input_container label{
+    min-width:200px;
+    font-size:1.1rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:1em;
+}
+.to_do_input_container input{
+    margin-bottom:1em;
+    background-color:black;
+    color:#d4d4d4;
+    min-width: 200px;
+    border:none;
+    padding:1em;
+}
+
+.to_do_input_container textarea{
+    width:100%;
+    background-color: black;
+    color:#d4d4d4;
+    border:none;
+    font-size:1.2rem;
+    min-height:150px;
+}
+
+.input-main-goal label{
+    width:100%;
+    text-align:center;
+}
+
+.to_do_input_container .btn-container {
+    width:100%;
+    text-align:right;
+    padding:1em;
+}
+
+.to_do_input_container .btn-container button{
+    background-color: rgba(221, 0, 255, 0.51);
+    border:none;
+    color:white;
+    transition: 0.3s;
+    padding:0.3em;
+    font-size: 1.5em;
+}
+
+.to_do_input_container .btn-container button:hover{
+    background-color: rgba(221, 0, 255, 1);
+    
+}
+
+
+/*------------------------------------------------------*/
+
+/*To-Do details*/
+
+.dates_to_do_detail_container {
+    border-bottom: 1px solid rgba(98, 23, 109, 0.9);
+    background-color: rgba(0, 0, 0, 0.69);
+    text-align: right;
+    padding: 2em 1em 2em 1em;
+    height: 100%;
+}
+
+.detail_text {
+    border-bottom: 1px solid rgba(98, 23, 109, 0.9);
+    background-color: rgba(98, 23, 109, 0.51);
+    padding: 2em;
+    font-weight: 400;
+    font-size: 1rem;
+    min-height: 100px;
+    height: 100%;
+}
+
+.details_button{
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.details_button button{
+    background-color: rgba(221, 0, 255, 0.51);
+    border: none;
+    height: 25px;
+    width: 25px;
+    transition: 0.3s;
+}
+
+.details_button button:hover{
+    background-color: rgba(221, 0, 255, 1);
+}
+
+/*------------------------------------------------------*/
+
+.add-to-do-btn {
+    border: none;
+    background-color: rgba(42, 0, 83, 0.7);
+    transition: 0.3s;
+    color: white;
+    padding: 1em;
+    font-size: 1.1rem;
+    width:100%;
+    text-align:center;  
+}
+.add-to-do-btn:hover {
+    background-color: rgba(42, 0, 83, 1);
+}
+
+
+.display {
+    display: none !important;
+    transition: all 1s ease;
+}
+
+@media (max-width: 1400px) {
+    .to_do_container_all {
+        padding: 0 16em;
+        margin-bottom: 15em;
+    }
+    
+}
+
+
+@media (max-width: 1300px) {
+    .to_do_container_all {
+        padding: 0 13em;
+        margin-bottom: 15em;
+    }
+}
+
+@media (max-width: 1200px) {
+    .to_do_container_all {
+        padding: 0 9em;
+        margin-bottom: 10em;
+    }
+}
+
+@media (max-width: 1100px) {
+    .to_do_container_all {
+        padding: 0 6em;
+        margin-bottom: 7em;
+    }
+}
+
+@media (max-width: 1000px) {
+    .to_do_container_all {
+        padding: 0 4em;
+        margin-bottom: 7em;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .to_do_container_all {
+        padding: 0 4em;
+        margin-bottom: 7em;
+    }
+
+    .dates_to_do_container {
+        text-align: center;
+        padding: 2em 1em 1em 1em;
+        height: 100%;
+    }
+
+    .to_do_input_container label {
+        text-align:center;
+        width:100%;
+    }
+
+    .to_do_input_container input {
+        min-width: unset;
+        width: 100%;
+        padding: 1em;
+    }
+
+    .to_do_input_container {
+        padding: 2em 3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .to_do_container_all {
+        padding: 0 1em;
+        margin-bottom: 7em;
+    }
+
+    
+}

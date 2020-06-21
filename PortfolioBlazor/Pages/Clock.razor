@@ -1,0 +1,72 @@
+﻿@page "/Clock"
+@inherits ClockBase
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/AlgorithmsP2.css" rel="stylesheet" />
+    <link href="../css/clock.css" rel="stylesheet" />
+</head>
+
+<div class="description_container">
+    <div class="content_container">
+
+        <div class="title_container">
+            <h2>Sum all digits of a number</h2>
+            <div class="heading_underline"></div>
+        </div>
+
+        <p>This program simiulates how clock works</p>
+    </div>
+</div>
+
+<section id="Bars">
+
+    <div class="bar_container">
+
+        <div class="card">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" style="stroke-dashoffset: @hour_percentage"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>@hour</h2>
+                    </div>
+                </div>
+                <h2 class="text">Hour</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" style="stroke-dashoffset: @minute_percentage"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>@minute</h2>
+                    </div>
+                </div>
+                <h2 class="text">Minute</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" style="stroke-dashoffset: @second_percentage"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>@second</h2>
+                    </div>
+                </div>
+                <h2 class="text">Second</h2>
+            </div>
+        </div>
+
+    </div>
+
+</section>

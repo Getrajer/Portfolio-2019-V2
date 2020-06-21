@@ -1,0 +1,160 @@
+﻿@page "/todoList"
+
+@inherits ToDoListBase
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/AlgorithmsP2.css" rel="stylesheet" />
+    <link href="../css/to_do_style_V1.css" rel="stylesheet" />
+</head>
+
+<div class="description_container">
+    <div class="content_container">
+
+        <div class="title_container">
+            <h2>To-Do List</h2>
+            <div class="heading_underline"></div>
+        </div>
+
+        <p>This program is an interactive To-Do List</p>
+    </div>
+</div>
+
+<div class="to_do_container_all">
+    <ul>
+        @foreach (var T in toDoItems)
+        {
+            <li>
+                <div class="to_do_container">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="dates_to_do_container">
+                                <div class="date_posted">
+                                    <p>From: </p>
+                                    <p>@T.Posted</p>
+                                </div>
+                                <div class="deadline">
+                                    <p>To: </p>
+                                    <p>@T.Deadline</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="to_do_content_container">
+                                <div class="to_do_title">
+                                    <h4>Title: @T.Title</h4>
+                                    <div class="button_container">
+                                        <button @onclick="@(() => deleteToDoItem(T.ItemId) )">X</button>
+                                    </div>
+                                </div>
+                                <div class="to_do_main">
+                                    <p>@T.MainGoal</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="to_do_details">
+                    @if (T.ToDoDetails != null || T.ToDoDetails.Count > 0)
+                    {
+                        @foreach (var Td in T.ToDoDetails)
+                        {
+                            <div class="detail_container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="dates_to_do_detail_container">
+                                            <div class="start_details">
+                                                <p>From: @Td.Start</p>
+                                            </div>
+                                            <div class="end_detail">
+                                                <p> To: @Td.End</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="detail_text">
+                                            <div class="details_button">
+                                                <button @onclick="@(() => T.DeleteDetail(Td.Id))">X</button>
+                                            </div>
+                                            <p>@Td.DetailsText</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    <button class="add-to-do-btn" @onclick="toggleAdd_details">@text_toggle_details</button>
+                    <div class="to_do_input_container @addMenuCss_details">
+                        <div class="title_container text-center">
+                            <h4>Add To-Do Details</h4>
+                            <div class="heading_underline"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-field">
+                                    <label title="start">Start</label>
+                                    <input @bind="detailsStart" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="input-field">
+                                    <label title="end">End</label>
+                                    <input @bind="detailsEnd" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="input-field">
+                                    <label title="details">Details</label>
+                                    <textarea @bind="detailsText" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="btn-container">
+                            <button @onclick="@(() => T.AddDetails(detailsText, detailsStart, detailsEnd) )">Add Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+
+    <button class="add-to-do-btn" @onclick="toggleAdd">@text_toggle</button>
+
+    <div class="to_do_input_container @addMenuCss">
+        <div class="title_add_container">
+            <div class="title_container text-center">
+                <h4>Add To-Do</h4>
+                <div class="heading_underline"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-field">
+                    <label title="Deadline">To-Do deadline</label>
+                    <input @bind="toDoDeadline" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-field">
+                    <label title="Title">To-Do title</label>
+                    <input @bind="toDoTitle" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-main-goal">
+                    <label title="MainGoal">To-Do main goal</label>
+                    <textarea @bind="toDoMainGoal" />
+                </div>
+            </div>
+            <div class="btn-container">
+                <button class="add-to-do-btn" @onclick="createToDoItem">Add todo</button>
+            </div>
+        </div>
+    </div>
+</div>

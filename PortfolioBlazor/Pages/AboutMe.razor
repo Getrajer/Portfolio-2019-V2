@@ -1,0 +1,304 @@
+﻿@page "/About Me"
+<head>
+    <link rel="stylesheet" href="../css/about_style.css" />
+</head>
+
+<div class="about_me_page_container">
+
+    <div class="title_container">
+        <h1>About Me</h1>
+        <div class="underline_container">
+            <div class="underline blinker"></div>
+        </div>
+        <h2>
+            <NavLink class="link" href="TechSkills">
+                <i class="far fa-hand-point-right"></i>   Technical Skills
+            </NavLink>
+        </h2>
+
+        <h2>
+            <NavLink class="link" href="Soft Skills">
+                <i class="fa fa-user"></i>   Soft Skills
+            </NavLink>
+        </h2>
+    </div>
+
+    <section id="about_me">
+        <div class="welcoming_container">
+            <div class="line">
+                <span class="code">WriteLine</span> (Hello my name is Mateusz Owczarek) <span class="code">;</span>
+            </div>
+            <div class="line">
+                <span class="code">WriteLine</span> (I'am <span class="pink">Full-Stack</span> developer)<span class="code">;</span>
+            </div>
+            <div class="line">
+                <span class="code">WriteLine</span> (I work with use of <span class="pink">C#</span> and <span class="pink">.NET</span> Back-End stack)<span class="code">;</span>
+            </div>
+            <div class="line">
+                <span class="code">WriteLine</span> (I'am flexible with any Front-End frameworks or technologies, but mainly I use <span class="pink">React </span> and <span class="pink">Blazor</span>)<span class="code">;</span>
+            </div>
+            <div class="line">
+                <span class="code">WriteLine</span> (I got excelent knowledge with use of <span class="pink">HTML, CSS, JS</span>)<span class="code">;</span>
+            </div>
+            <div class="line">
+                <span class="code">WriteLine</span> (Curently I'am studying <span class="pink">Machine Learning</span>)<span class="code">;</span>
+            </div>
+
+            <div class="code_container_animation">
+                <span class="letter1">C </span><span class="letter2">O </span><span class="letter3">D </span><span class="letter4">E </span><span class="heart"> &lt3</span>
+            </div>
+
+            <div class="line">
+                <span class="code">WriteLine</span> (My hobbies are: ) <span class="code">;</span>
+                <br />
+
+                <p><span class="html_code">&ltol&gt</span></p>
+
+                <p>&nbsp &nbsp &nbsp<span class="html_code">&ltli&gt</span>Technology<span class="html_code">&lt/li&gt</span></p>
+                <p>&nbsp &nbsp &nbsp<span class="html_code">&ltli&gt</span>History<span class="html_code">&lt/li&gt</span></p>
+                <p>&nbsp &nbsp &nbsp<span class="html_code">&ltli&gt</span>Cooking<span class="html_code">&lt/li&gt</span></p>
+                <p>&nbsp &nbsp &nbsp<span class="html_code">&ltli&gt</span>Video Games<span class="html_code">&lt/li&gt</span></p>
+                <p>&nbsp &nbsp &nbsp<span class="html_code">&ltli&gt</span>Gym<span class="html_code">&lt/li&gt</span></p>
+
+                <p><span class="html_code">&lt/ol&gt</span></p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <div class="title_container">
+        <h1>Learing Resources</h1>
+        <div class="underline_container">
+            <div class="underline blinker"></div>
+        </div>
+    </div>
+
+    <section id="learinig_resources">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="resource">
+                    <div @onclick="Display_Ul_Books" class="resource_btn">
+                        <span class="btn_text">Books</span><span class="btn_small">(@s_message_books)</span>
+                    </div>
+
+                    <div class="list_container">
+                        <ul id="books" class="@display_block_books">
+
+                            <li>
+                                <div>
+                                    <span class="pink">Name: </span>C# 8 and .NET Core 3.0<br />
+                                    <span class="pink">Publisher: </span>Packt <br />
+                                    <span class="pink">Obtained knoweledge: </span> Adnvanced C# knoweledge. Learning .NET Core 3.0 framework in dephs. Polished my understanding of how API are working.
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <span class="pink">Name: </span>Pro ASP.NET MVC5<br />
+                                    <span class="pink">Publisher: </span>Apress <br />
+                                    <span class="pink">Obtained knoweledge: </span> My first book on MVC for .NET. Creating web apps. Creating e-commerce website. Working with databases. .NET framework in dephs.
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <span class="pink">Name: </span>Visual C#2012 Programing<br />
+                                    <span class="pink">Publisher: </span>WROX <br />
+                                    <span class="pink">Obtained knoweledge: </span> My first book on C#. Basics of C#. Advanced concepts in programing. Basic desktop programing. Basics of LinQ and databases.
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <span class="pink">Name: </span>Javascript & JQuery<br />
+                                    <span class="pink">Publisher: </span>Wiley <br />
+                                    <span class="pink">Obtained knoweledge: </span> This book gave me knoweledge about Javascript from very basic concepts to more complex ones. As well I have lernt about JQuery. Interacting with DOM by use of Javascript. Creating small browser games.
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <span class="pink">Name: </span>HTML & CSS<br />
+                                    <span class="pink">Publisher: </span>Wiley <br />
+                                    <span class="pink">Obtained knoweledge: </span> This book gave me knoweledge about HTML and CSS.
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="resource">
+                    <div @onclick="Display_Ul_Courses" class="resource_btn">
+                        <span class="btn_text">Courses</span><span class="btn_small">(@s_message_courses)</span>
+                    </div>
+
+                    <div class="list_container">
+                        <ul id="books" class="@display_block_courses">
+
+                            <li>
+                                <div>
+                                    <span class="pink">From: </span>Lynda / Linkedin Learning<br />
+                                    <span class="pink">Courses: </span> <br />
+                                    <span>Learning C# Algorithms</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Learning ASP.NET Core MVC</span><span class="html_code">&ltbr /&gt</span><br />
+                                    <span>Transition from Waterfall to Agile Project Managment</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>JavaScript Patterns</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>ASP.NET MVC 5 Essential Training</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Learning the Javascript Language</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Introduction to Web Design and Development</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>CSS Essential Training 1,2,3</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Programing Fundations Fundamentals</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Web Development Full-Stack vs Front-End</span><span class="html_code">&ltbr/&gt</span><br />
+
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div>
+                                    <span class="pink">From: </span>Youtube<br />
+
+                                    <span class="pink">Chanel: </span> Kudvenkat <br />
+                                    <span class="pink">Courses:  </span> <br />
+
+                                    <span>ASP.NET core tutorial for beginners</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Solid design principles</span><span class="html_code">&ltbr /&gt</span><br />
+                                    <span>ASP.NET Web API tutorial for beginners</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>LINQ tutorial</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <br />
+                                    <span class="pink">From: </span>Youtube<br />
+                                    <span class="pink">Chanel: </span> FreeCodeCamp <br />
+                                    <span class="pink">Courses:  </span> <br />
+                                    <span>Learn ASP.NET Core 3.1 Full Course for Beginners</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Data Structures Easy to Advanced Course</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>Create a C# Application from Start to Finish</span><span class="html_code">&ltbr/&gt</span><br />
+                                    <span>SQL - Intro to Computer Science</span><span class="html_code">&ltbr/&gt</span><br />
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="resource">
+                    <div @onclick="Display_Ul_Uni" class="resource_btn">
+                        <span class="btn_text">University</span><span class="btn_small">(@s_message_uni)</span>
+                    </div>
+
+                    <div class="list_container">
+                        <ul id="books" class="@display_block_uni">
+
+                            <li>
+                                <div>
+                                    <span class="pink">Obtained knoweledge: </span><br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <i class="fa fa-database pink"></i><span> Data Structures</span><br />
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <i class="fa fa-square-root-alt pink"></i><span> Math (Buisness math, Probrability, Mathematical Analysis, Algebra)</span><br />
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <i class="fab fa-hackerrank pink"></i><span> Basics of cybersecurity</span><br />
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <i class="fas fa-users pink"></i><span> Agile driven development</span><br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <i class="fas fa-desktop pink"></i><span> Human centred computing</span><br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <i class="fab fa-dev pink"></i><span> Web development</span><br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <i class="fab fa-java pink"></i><span> Programing fundamentals with Java language</span><br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <i class="fas fa-mobile pink"></i><span> Mobile Development</span><br />
+                                </div>
+                            </li>
+
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</div>
+@code{
+
+
+    string display_block_books = "";
+    string s_message_books = "Show list";
+    public void Display_Ul_Books()
+    {
+        if(display_block_books != "display_block_books")
+        { display_block_books = "display_block_books";
+            s_message_books = "Hide List";}
+        else
+        {
+            display_block_books = "";
+            s_message_books = "Show List";}
+    }
+
+    string display_block_courses = "";
+    string s_message_courses = "Show list";
+    public void Display_Ul_Courses()
+    {
+        if(display_block_courses != "display_block_courses")
+        { display_block_courses = "display_block_courses";
+            s_message_courses = "Hide List";}
+        else
+        { display_block_courses = "";
+            s_message_courses = "Show List";}
+    }
+
+    string display_block_uni = "";
+    string s_message_uni = "Show list";
+    public void Display_Ul_Uni()
+    {
+        if(display_block_uni != "display_block_uni")
+        { display_block_uni = "display_block_uni";
+        s_message_uni = "Hide List";}
+        else
+        { display_block_uni = "";
+        s_message_uni = "Show List";}
+    }
+
+}

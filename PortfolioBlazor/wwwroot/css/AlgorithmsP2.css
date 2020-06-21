@@ -1,0 +1,12 @@
+﻿.single_values
+{
+    font-size:1.3rem;
+    text-align:center;
+}
+
+.single_values h4, 
+.single_values p{
+    padding:1em;
+    letter-spacing:2px;
+    text-transform: uppercase;
+}

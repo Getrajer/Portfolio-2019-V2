@@ -1,0 +1,821 @@
+﻿
+
+.col-md-4, .col-lg-4, .row {
+    padding: 0;
+    margin: 0;
+}
+
+
+/*Tech skills main style*/
+
+#skills {
+    color: #d4d4d4;
+    max-width: 1600px;
+    position: relative;
+}
+
+.title_container{
+    text-align:center;
+    margin: 4em 0;
+}
+
+.title_container h1{
+    font-size: 3rem;
+    color:#d4d4d4;
+    letter-spacing: 8px;
+    text-transform:uppercase;
+    font-weight: 700;
+}
+
+.title_container h2 a{
+    color: rgb(0, 172, 124);
+    padding:0 0.5em;
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-decoration:none;
+    transition: 0.5s;
+}
+
+.title_container h2 a:hover {
+    color: #de31db;
+}
+
+.title_container .underline_container{
+    width:100%;
+    padding: 0.9em 25%;
+}
+
+.title_container .underline_container .underline{
+    background-color:#d4d4d4;
+    width:100%;
+    height:2px;
+}
+
+.skills_container {
+    border-top: 2px solid #d4d4d4;
+    border-left: 3px solid #d4d4d4;
+    border-bottom: 5px solid #d4d4d4;
+    border-right: 8px solid #d4d4d4;
+    padding: 2em 1em;
+    transition: 0.7s border;
+    position: relative;
+    min-height: 190px;
+}
+
+.skills_container:hover {
+    border-top: 2px solid #de31db;
+    border-left: 3px solid #de31db;
+    border-bottom: 5px solid #de31db;
+    border-right: 8px solid #de31db;
+}
+
+
+.skills_title{
+    margin-bottom:0.5em;
+}
+
+.skills_title h2{
+    font-size:2rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.skill_container{
+    
+}
+
+.skill_container .description {
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 0.3em 0;
+    display:block;
+    font-weight:400;
+    animation-name: skill_desc_animation;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+
+h2{
+    margin-bottom:0.5em;
+}
+
+.icon_s {
+    width: 100%;
+    display:block;
+    padding:0.2em;
+}
+
+#front-end, #back-end, #other {
+    padding: 0 0.6em;
+    margin-bottom: 2em;
+}
+/*-----------------------------------------*/
+
+
+/*Soft skills main style*/
+#soft_skills_container {
+    width: 100%;
+    color: #d4d4d4;
+    display:flex;
+    justify-content:center;
+}
+
+#soft_skills_container .grid_container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+}
+
+.agile{
+    grid-column: 1/4;
+    grid-row: 1/3;
+    text-transform:uppercase;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing:6px;
+    text-align:right;
+}
+.hard_working {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: #08bd00;
+}
+.details {
+    grid-column: 1/6;
+    color: #de31db;
+    font-size:2rem;
+    text-align:center;
+    letter-spacing: 30px;
+}
+.three{
+    grid-column:1/6;
+    letter-spacing:15px;
+    text-align:center;
+    font-weight:900;
+    font-size:1.4rem;
+    padding-top:0.5em;
+    
+}
+.three .fa{
+    color:#de31db;
+}
+
+.passion {
+    grid-column: 1/4;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    text-align: right;
+    color: #08bd00;
+}
+
+.math {
+    grid-column: 4/5;
+    text-transform: uppercase;
+    font-size: 7rem;
+    padding-top:0.1em;
+    font-weight: 900;
+}
+
+.problem_solving {
+    grid-column: 1/6;
+    color: #de31db;
+    font-size: 2rem;
+    text-align: center;
+    text-transform:uppercase;
+    letter-spacing: 10px;
+    font-weight:700;
+}
+.four {
+    grid-column: 1/6;
+    letter-spacing: 10px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding-top: 0.5em;
+    color: #08bd00;
+}
+.emoji {
+    grid-column: 1/6;
+    padding-top:0.5em;
+    font-size:5rem;
+    font-weight:900;
+    text-align:center;
+}
+
+
+@media only screen and (min-width: 991px) {
+.agile{
+    animation: agile_animate 3s 1;
+}
+.hard_working {
+    animation: hard_working_animate 3s 1;
+}
+.details {
+    animation: details_animate 3s 1;
+    
+}
+.three{
+    animation: three_animate 3s 1;
+}
+.three .fa{
+    color:#de31db;
+}
+
+.passion {
+    animation: passion_animate 3s 1;
+}
+
+.math {
+    animation: math_animate 3s 1;
+}
+
+.problem_solving {
+    animation: problem_solving_animate 3s steps(1, start);
+    
+}
+.four {
+    animation: four_animate 3s 1;
+}
+.emoji {
+    animation: emoji_animate 10s infinite;
+}
+
+}
+
+@keyframes agile_animate{
+    0% {
+        color: #08bd00;
+    }
+}
+
+@keyframes hard_working_animate{
+    0% {
+        color: #d4d4d4;
+    }
+}
+
+@keyframes details_animate{
+    0% {
+        color: #08bd00;
+    }
+}
+
+@keyframes three_animate{
+    0% {
+       color: #de31db;
+    }
+}
+
+@keyframes passion_animate{
+    0% {
+       color: #d4d4d4;
+    }
+}
+
+@keyframes math_animate{
+    0% {
+        color: #08bd00;
+    }
+}
+
+@keyframes problem_solving_animate{
+    0% {
+        color: #08bd00;
+    }
+}
+
+@keyframes four_animate{
+    0% {
+        color: #d4d4d4;
+    }
+}
+
+@keyframes emoji_animate{
+    0% {
+        color: transparent;
+    }
+
+    15% {
+        color: #d4d4d4;
+    }
+
+    30% {
+        color: transparent;
+    }
+
+    45% {
+        color: #08bd00;
+    }
+
+    65%{
+        color:transparent;
+    }
+
+    85% {
+        color: #de31db;
+    }
+
+
+    100%{
+        color:transparent;
+    }
+    
+}
+@media only screen and (max-width: 1000px){
+
+#soft_skills_container .grid_container {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px;
+}
+
+.agile{
+    font-size: 2rem;
+}
+.hard_working {
+    font-size: 2rem;
+}
+.details {
+    letter-spacing:9px;
+    font-size:1rem;
+}
+.three{
+    letter-spacing:5px;
+    font-size:1rem;
+    
+}
+.three .fa{
+    color:#de31db;
+}
+
+.passion {
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+.math {
+    font-size: 3rem;
+}
+
+.problem_solving {
+    font-size: 1rem;
+    letter-spacing: 5px;
+    font-weight:700;
+}
+.four {
+    letter-spacing: 5px;
+    font-size: 1rem;
+}
+.emoji {
+    font-size:2.4rem;
+}
+}
+
+@media only screen and (max-width: 650px){
+
+#soft_skills_container .grid_container {
+    display: grid;
+    grid-template-columns: 70px 70px 70px 70px 70px;
+}
+
+.agile{
+    font-size: 1.5rem;
+}
+.hard_working {
+    font-size: 1.5rem;
+}
+.details {
+    letter-spacing:9px;
+    font-size:1rem;
+}
+.three{
+    letter-spacing:5px;
+    font-size:1rem;
+    
+}
+.three .fa{
+    color:#de31db;
+}
+
+.passion {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.math {
+    font-size: 2rem;
+}
+
+.problem_solving {
+    font-size: 1rem;
+}
+.four {
+    font-size: 1rem;
+}
+.emoji {
+    font-size:2rem;
+}
+}
+
+
+/*-----------------------------------------*/
+/*About Me Style*/
+
+.about_me_page_container {
+    width:100%;
+    max-width: 1300px;
+    font-weight: 600;
+}
+
+
+#about_me {
+   margin-top:5em;
+   color: #d4d4d4;
+}
+
+#about_me .welcoming_container{
+    font-size:1.7rem;
+}
+
+#about_me .code{
+    color:#08bd00;
+    font-size:0.6rem;
+}
+.pink{
+    color:#de31db;
+}
+
+.code_container_animation{
+    padding:0.5em 0;
+    text-align:center;
+    font-size:3.5rem;
+    letter-spacing:10px;
+    font-weight: 700;
+}
+
+.letter1 {
+    display: inline-block;
+    animation: letter1_code_animate 6s infinite;
+}
+
+.letter2 {
+    display: inline-block;
+    animation: letter2_code_animate 6s infinite;
+}
+
+.letter3 {
+    display: inline-block;
+    animation: letter3_code_animate 6s infinite;    
+}
+
+.letter4 {
+    display: inline-block;
+    animation: letter4_code_animate 6s infinite;
+}
+
+.heart {
+    color: red;
+    animation: heart_animate 6s infinite;
+}
+
+.html_code{
+    font-size:1rem;
+    color:#6800ff;
+}
+
+
+/*Learing Resouorces*/
+#learinig_resources {
+    color: #d4d4d4;
+    text-align:center;
+    margin-bottom:10em;
+    max-width:1300px;
+    font-size:1.1rem;
+}
+
+.btn_small {
+    font-size: 0.7rem;
+    color: #08bd00;
+}
+
+.resource{
+    padding:0 0.3em;
+}
+
+
+.line{
+    width:100%;
+}
+
+
+.resource_btn {
+    width: 100%;
+    font-size: 3rem;
+    border-top: 2px solid #d4d4d4;
+    border-left: 3px solid #d4d4d4;
+    border-bottom: 5px solid #d4d4d4;
+    border-right: 8px solid #d4d4d4;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.resource_btn:hover{
+    color:#de31db;
+    border-top: 2px solid #de31db;
+    border-left: 3px solid #de31db;
+    border-bottom: 5px solid #de31db;
+    border-right: 8px solid #de31db;
+}
+
+.resource_btn:hover .btn_small{
+    color:transparent;
+}
+
+.list_container {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+.list_container li{
+    padding: 0.5em 0.2em;
+    width:100%;
+}
+
+#books{
+    display:none;
+}
+
+.display_block_books{
+    display:block!important;
+}
+
+.display_block_courses {
+    display: block!important;
+}
+
+.display_block_uni {
+    display: block!important;
+}
+
+@media only screen and (max-width: 1300px) {
+    .about_me_page_container {
+        width:100%;
+
+    }
+
+    #learinig_resources {
+        width:100%;
+    }
+}
+
+
+@keyframes letter1_code_animate {
+    0% {
+        transform:rotate(0deg);
+    }
+
+    10% {
+        color: #08bd00;
+    }
+
+    90% {
+        color: #d4d4d4;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes letter2_code_animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        color: #de31db;
+    }
+
+    90% {
+        color: #d4d4d4;
+    }
+
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes letter3_code_animate {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    10% {
+        color: #08bd00;
+    }
+
+    90% {
+        color: #d4d4d4;
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes letter4_code_animate {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    10% {
+        color: #de31db;
+    }
+
+    90% {
+        color: #d4d4d4;
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes heart_animate{
+    0% {
+        color: #f10101;
+    }
+
+    30% {
+        color: #000000;
+    }
+
+    60% {
+        color: #f10101;
+    }
+
+    90% {
+        color: #000000;
+    }
+
+    100% {
+        color: #f10101;
+    }
+}
+
+
+/*---------------------------------------------------*/
+@media only screen and (max-width: 991px) {
+    .skills_container{
+        padding:0;
+    }
+
+    .skill_container {
+        min-height: 0;
+        padding:1em;
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+
+    
+
+    .skills_container {
+        padding: 0 5em;
+    }
+
+    .skill_container {
+        min-height: 0;
+        padding: 1em 10em;
+    }
+
+    .icon_s {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .skill_container {
+        min-height: 0;
+        padding: 1em 5em;
+    }
+
+    .icon_s {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+
+    .skill_container {
+        min-height: 0;
+        padding: 1em 2em;
+    }
+
+    .icon_s {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+
+    .skill_container {
+        min-height: 0;
+        padding: 1em 1em;
+    }
+
+    .icon_s {
+        width: 100%;
+        display: block;
+    }
+}
+
+/*
+    Animation querys
+*/
+
+@media only screen and (min-width: 992px) {
+    #front-end {
+        position: relative;
+        animation-name: Front-End-Animation;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+    }
+
+    #back-end {
+        position: relative;
+        animation-name: Back-End-Animation;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+    }
+
+    #other {
+        position: relative;
+        animation-name: Other;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+    }
+
+}
+
+
+@keyframes Front-End-Animation {
+    0% {
+       left:-600px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes Back-End-Animation {
+    0% {
+        bottom: -600px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes Other{
+    0% {
+        right: -600px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+
+
+
+@keyframes skill_desc_animation{
+    0% {
+        color: transparent;
+    }
+
+    50% {
+        letter-spacing: 6px;
+        color: #08bd00;
+    }
+
+    90% {
+        color: #08bd00;
+    }
+}

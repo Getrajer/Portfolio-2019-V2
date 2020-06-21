@@ -1,0 +1,97 @@
+﻿@page "/palindrome"
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/AlgorithmsP2.css" rel="stylesheet" />
+</head>
+
+<div class="page_contaier">
+
+    <div class="description_container">
+        <div class="content_container">
+            <div class="title_container">
+                <h2>Palindrome</h2>
+                <div class="heading_underline blinker"></div>
+            </div>
+            <p>This program is going to check if a word is an palindrome</p>
+        </div>
+    </div>
+
+
+
+    <div class="program_container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="program_start_container">
+                    <div class="input_container">
+                        <h5>Enter somethig: </h5>
+                        <input @bind-value="str" @bind-value:event="oninput" />
+                    </div>
+                    <div class="start_container">
+                        <button class="btn btn-primary" @onclick="IsPalindrome">Check if palindrome</button>
+                    </div>
+                    <div class="info_container">
+                        <span class="sucess">@success</span> <span class="error">@error</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="output_container single_values">
+                    <h4>Is Palindrome: </h4>
+                    <p>@isPalindrome</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@code {
+    string str;
+    string isPalindrome;
+    int counterP = 0;
+    string success;
+    string error;
+
+
+    void IsPalindrome()
+    {
+        if(str == null)
+        {
+            error = "Please enter something";
+        }
+        else
+        {
+            char[] strC = str.ToCharArray();
+        int lenght = str.Length - 1;
+
+        for (int i = lenght; i > 0; i--)
+        {
+            int j = 0;
+            if (strC[i] == strC[j])
+            {
+                counterP++;
+            }
+            j++;
+        }
+
+        if (counterP == lenght)
+        {
+            //If is palindrome
+            isPalindrome = "Yes";
+        }
+        else
+        {
+            //If is not palindrome
+            isPalindrome = "No";
+        }
+
+        //Reset Counter
+        counterP = 0;
+
+        }
+
+
+    }
+}
+

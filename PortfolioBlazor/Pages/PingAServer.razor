@@ -1,0 +1,93 @@
+﻿@page "/pingServer"
+@inherits PingServerBase
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet"/>
+</head>
+
+<div>
+
+
+    <div class="description_container">
+        <div class="content_container">
+
+            <div class="title_container">
+                <h2>Ping a website</h2>
+                <div class="heading_underline blinker"></div>
+            </div>
+
+            <p>
+                This program will show information about website.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="program_container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="program_start_container">
+                    <div class="input_container">
+                        <h5>Enter a valid website address </h5>
+                        <input @bind-value="url" @bind-value:event="oninput" />
+                    </div>
+                    <div class="start_container">
+                        <button class="btn btn-primary" @onclick="pingServer">Ping website</button> 
+                    </div>
+                    <div class="info_container">
+                        <span class="sucess">@success</span> <span class="error">@error</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="output_container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Url:</th>
+                                <td>@url</td>
+                            </tr>
+                            <tr>
+                                <th>Site Reply:</th>
+                                <td>@siteReply</td>
+                            </tr>
+                            <tr>
+                                <th>Ping Time(ms):</th>
+                                <td>@pingTime</td>
+                            </tr>
+                            <tr>
+                                <th>Scheme:</th>
+                                <td>@scheme</td>
+                            </tr>
+                            <tr>
+                                <th>Port:</th>
+                                <td>@port</td>
+                            </tr>
+                            <tr>
+                                <th>Host:</th>
+                                <td>@host</td>
+                            </tr>
+                            <tr>
+                                <th>Path:</th>
+                                <td>@path</td>
+                            </tr>
+                            <tr>
+                                <th>Query:</th>
+                                <td>@query</td>
+                            </tr>
+
+                            @foreach (var el in ipAddresses)
+                            {
+                                <tr>
+                                    <th>Address:</th>
+                                    <td>@el</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

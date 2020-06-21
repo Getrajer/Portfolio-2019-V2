@@ -1,0 +1,64 @@
+﻿@page "/countingoccurrance"
+@inherits CountingOccurrenceCharacterBase
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/AlgorithmsP2.css" rel="stylesheet" />
+</head>
+
+<div class="description_container">
+    <div class="content_container">
+        <div class="title_container">
+            <h2>Count Occurence</h2>
+            <div class="heading_underline blinker"></div>
+        </div>
+        <p>This program is going to count occurrance of each character in the given string</p>
+    </div>
+</div>
+
+
+<div class="program_container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="program_start_container">
+                <div class="input_container">
+                    <h5>Enter a anything: </h5>
+                    <input @bind-value="str" @bind-value:event="oninput" />
+                </div>
+                <div class="start_container">
+                    <button class="btn btn-primary" @onclick="CountOccurance">CountOccurance</button>
+                </div>
+                <div class="info_container">
+                    <span class="sucess">@success</span> <span class="error">@error</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="output_container single_values">
+                <h4>Occurence</h4>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Character</th>
+                            <th>Occurrence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+
+                            foreach (var el in occurrenceList)
+                            {
+                                <tr>
+                                    <td>@el.characterS</td>
+                                    <td>@el.timesOccurence</td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

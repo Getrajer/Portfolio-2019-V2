@@ -1,0 +1,56 @@
+﻿@page "/sortingAll"
+@inherits SortingAllBase
+
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/coulumn_chart_style_v2.css" rel="stylesheet" />
+</head>
+
+<div class="description_container">
+    <div class="content_container">
+        <div class="title_container">
+            <h2>Sort Data</h2>
+            <div class="heading_underline blinker"></div>
+        </div>
+        <p>This program will sort data with use of bubble sort algorithm</p>
+    </div>
+</div>
+
+
+<button class="btn btn-primary" @onclick="PopulateChart">Populate Chart</button>
+<button class="btn btn-primary" @onclick="BubbleSort">Do buble sort</button>
+<button class="btn btn-primary" @onclick="QuickSortChart">Do Quick Sort</button>
+<button class="btn btn-primary" @onclick="SelectionSort">Do Selection Sort</button>
+<button class="btn btn-primary" @onclick="InsertionSort">Do Insertion Sort</button>
+
+<div class="info_container">
+    <span class="sucess">@success_populate</span> <span class="error">@error_populate</span>
+    <br />
+    <span class="sucess">@success_sort</span> <span class="error">@error_sort</span>
+</div>
+
+<section id="chart-container">
+
+    <div class="box">
+        <div class="scale top-scale">@top_scale</div>
+        <div class="scale middle-scale">@middle_scale</div>
+        <div class="scale bottom-scale">@bottom_scale</div>
+
+        @foreach (var obj in graphData)
+        {
+            <div class="variable">
+                <div class="graph" style="height: @obj.returnPercentage()">
+                    <div class="percent">
+                        @obj.number
+                    </div>
+                </div>
+                <div class="name">
+                    @obj.name
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+
+

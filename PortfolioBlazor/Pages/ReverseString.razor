@@ -1,0 +1,79 @@
+﻿@page "/reverse"
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/AlgorithmsP2.css" rel="stylesheet" />
+</head>
+
+<div class="page_contaier">
+
+    <div class="description_container">
+        <div class="content_container">
+            <div class="title_container">
+                <h2>Reverse a string</h2>
+                <div class="heading_underline blinker"></div>
+            </div>
+            <p>This program is going to reverse string with use of char array</p>
+        </div>
+    </div>
+
+
+
+    <div class="program_container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="program_start_container">
+                    <div class="input_container">
+                        <h5>Enter a anything: </h5>
+                        <input @bind-value="str" @bind-value:event="oninput" />
+                    </div>
+                    <div class="start_container">
+                        <button class="btn btn-primary" @onclick="ReverseText">Reverse String</button>
+                    </div>
+                    <div class="info_container">
+                        <span class="sucess">@success</span> <span class="error">@error</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="output_container single_values">
+                    <h4>Value before:</h4>
+                    <p>@str</p>
+                    <h4>Value after:</h4>
+                    <p>@reversed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@code {
+    string str;
+    string reversed;
+    string error;
+    string success;
+
+    async void ReverseText()
+    {
+        if(str == null)
+        {
+            error = "Please write something";
+        }
+        else
+        {
+            char[] charArray = str.ToCharArray();
+            for (int i = 0, j = str.Length - 1; i < j; i++, j--)
+            {
+                charArray[i] = str[j];
+                charArray[j] = str[i];
+            }
+
+            string reversedstring = new string(charArray);
+            reversed = reversedstring;
+            success = "Success!";
+         
+        }
+
+    }
+}

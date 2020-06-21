@@ -1,0 +1,168 @@
+﻿@page "/BuildPizza"
+@inherits BuildPizzaBase
+<head>
+    <link href="../css/AlgorithmsP1.css" rel="stylesheet" />
+    <link href="../css/AlgorithmsP2.css" rel="stylesheet" />
+    <link href="../css/build_pizza_style.css" rel="stylesheet" />
+</head>
+
+<div class="description_container">
+    <div class="content_container">
+
+        <div class="title_container">
+            <h2>Sum all digits of a number</h2>
+            <div class="heading_underline"></div>
+        </div>
+
+        <p>This program will sum all digits from inteager</p>
+    </div>
+</div>
+
+
+<div id="pizza_app_container">
+    <div class="row">
+
+        <div class="col-lg-5">
+            <div class="choice_container">
+
+                <div class="choice_title_container">
+                    <h2>Choose size</h2>
+                    <div class="line_container">
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="sizes_container">
+                    <div class="option">
+                        <button class="choice_button" @onclick="First">@firstbtn</button> 10 Inches - £10
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Second">@secondbtn</button> 12 Inches - £12
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Third">@thirdbtn</button>  14 Inches - £14
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Fourth">@fourthbtn</button> 18 Inches - £18
+                    </div>
+                </div>
+
+
+                <div class="topping_options_container">
+                    <div class="choice_title_container">
+                        <h2>Choose Toppings</h2>
+                        <div class="line_container">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                    <div class="option">
+                        <button class="choice_button" @onclick="Mashroom">@mashroombtn</button> $2 Add Mashroom
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Chicken">@chickenbtn</button> £5 Add Chicken
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Peperoni">@peperonibtn</button>  £4 Add Peperoni
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Olives">@olivesbtn</button> £1 Add Olives
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Pepper">@pepperbtn</button> £2 Add Pepper
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Onion">@onionbtn</button> £2 Add Onion
+                    </div>
+                    <div class="option">
+                        <button class="choice_button" @onclick="Ham">@hambtn</button> £4 Add Ham
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart">
+                <div class="choice_title_container">
+                    <h2>To Pay</h2>
+                    <div class="line_container">
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="total">
+                    In total to pay: £@pizza.Total
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="pizza_container">
+                <div class="pizza">
+                    <div class="peperoni peperoni_1 @addMenuCss_peperoni"></div>
+                    <div class="peperoni peperoni_2 @addMenuCss_peperoni"></div>
+                    <div class="peperoni peperoni_3 @addMenuCss_peperoni"></div>
+                    <div class="peperoni peperoni_4 @addMenuCss_peperoni"></div>
+                    <div class="peperoni peperoni_5 @addMenuCss_peperoni"></div>
+                    <div class="peperoni peperoni_6 @addMenuCss_peperoni"></div>
+                    <div class="peperoni peperoni_7 @addMenuCss_peperoni"></div>
+                    <div class="peperoni peperoni_8 @addMenuCss_peperoni"></div>
+
+                    <div class="chicken chicken_1 @addMenuCss_chicken"></div>
+                    <div class="chicken chicken_2 @addMenuCss_chicken"></div>
+                    <div class="chicken chicken_3 @addMenuCss_chicken"></div>
+                    <div class="chicken chicken_4 @addMenuCss_chicken"></div>
+                    <div class="chicken chicken_5 @addMenuCss_chicken"></div>
+                    <div class="chicken chicken_6 @addMenuCss_chicken"></div>
+                    <div class="chicken chicken_7 @addMenuCss_chicken"></div>
+                    <div class="chicken chicken_8 @addMenuCss_chicken"></div>
+
+                    <div class="peper peper_1 @addMenuCss_pepper"></div>
+                    <div class="peper peper_2 @addMenuCss_pepper"></div>
+                    <div class="peper peper_3 @addMenuCss_pepper"></div>
+                    <div class="peper peper_4 @addMenuCss_pepper"></div>
+                    <div class="peper peper_5 @addMenuCss_pepper"></div>
+                    <div class="peper peper_6 @addMenuCss_pepper"></div>
+                    <div class="peper peper_7 @addMenuCss_pepper"></div>
+                    <div class="peper peper_8 @addMenuCss_pepper"></div>
+
+                    <div class="mashroom mashroom_1 @addMenuCss_mashroom"></div>
+                    <div class="mashroom mashroom_2 @addMenuCss_mashroom"></div>
+                    <div class="mashroom mashroom_3 @addMenuCss_mashroom"></div>
+                    <div class="mashroom mashroom_4 @addMenuCss_mashroom"></div>
+                    <div class="mashroom mashroom_5 @addMenuCss_mashroom"></div>
+                    <div class="mashroom mashroom_6 @addMenuCss_mashroom"></div>
+                    <div class="mashroom mashroom_7 @addMenuCss_mashroom"></div>
+                    <div class="mashroom mashroom_8 @addMenuCss_mashroom"></div>
+
+                    <div class="ham ham_1 @addMenuCss_ham"></div>
+                    <div class="ham ham_2 @addMenuCss_ham"></div>
+                    <div class="ham ham_3 @addMenuCss_ham"></div>
+                    <div class="ham ham_4 @addMenuCss_ham"></div>
+                    <div class="ham ham_5 @addMenuCss_ham"></div>
+                    <div class="ham ham_6 @addMenuCss_ham"></div>
+                    <div class="ham ham_7 @addMenuCss_ham"></div>
+                    <div class="ham ham_8 @addMenuCss_ham"></div>
+
+                    <div class="onion onion_1 @addMenuCss_onion"></div>
+                    <div class="onion onion_2 @addMenuCss_onion"></div>
+                    <div class="onion onion_3 @addMenuCss_onion"></div>
+                    <div class="onion onion_4 @addMenuCss_onion"></div>
+                    <div class="onion onion_5 @addMenuCss_onion"></div>
+                    <div class="onion onion_6 @addMenuCss_onion"></div>
+                    <div class="onion onion_7 @addMenuCss_onion"></div>
+                    <div class="onion onion_8 @addMenuCss_onion"></div>
+
+                    <div class="olives olives_1 @addMenuCss_olives"></div>
+                    <div class="olives olives_2 @addMenuCss_olives"></div>
+                    <div class="olives olives_3 @addMenuCss_olives"></div>
+                    <div class="olives olives_4 @addMenuCss_olives"></div>
+                    <div class="olives olives_5 @addMenuCss_olives"></div>
+                    <div class="olives olives_6 @addMenuCss_olives"></div>
+                    <div class="olives olives_7 @addMenuCss_olives"></div>
+                    <div class="olives olives_8 @addMenuCss_olives"></div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
